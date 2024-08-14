@@ -1,14 +1,14 @@
-- name: "{{component}}" repo
+- name: "{{component}} repo"
   ansible.builtin.copy:
     src: files
     dest: /etc/yum.repos.d/mongodb.repo
   
-- name: Install "{{component}}"
+- name: "Install {{component}}"
   ansible.builtin.package:
     name: mongodb-org
     state: present
 
-- name: start and enable "{{component}}"
+- name: "start and enable {{component}}"
   ansible.builtin.service:
     name: "{{component}}"
     state: started

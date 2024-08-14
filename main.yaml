@@ -1,0 +1,5 @@
+- name: {{compnent}}
+  hosts: {{compnent}}
+  become: yes
+  tasks:
+    - roles

@@ -10,7 +10,7 @@
 
 - name: "start and enable {{component}}"
   ansible.builtin.service:
-    name: "{{component}}"
+    name: mongod
     state: started
     enabled: yes
 
@@ -22,5 +22,5 @@
 
 - name: start and enable mongodb
   ansible.builtin.service:
-    name: "{{component}}"
+    name: mongod
     state: restarted

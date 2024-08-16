@@ -21,7 +21,7 @@
 
 - name: load catalogue data
   ansible.builtin.command: mongo --host mongodb.siddhu.xyz < /app/schema/catalogue.js
-  when: component == "catalogue" and products_count.stdout == "0"
+  when: component == "catalogue" and product_count.stdout == "0"
  
 
 - name: load user data

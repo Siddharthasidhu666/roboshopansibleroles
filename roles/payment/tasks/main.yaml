@@ -38,7 +38,7 @@
     chdir: /app
 
 - name: Copy payment service
-  ansible.builtin.copy:
+  ansible.builtin.template:
     src: "{{sai}}"
     dest: /etc/systemd/system/payment.service
 

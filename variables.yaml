@@ -1,1 +1,1 @@
-sql: mysql.repo
+sql: mysql.repo.j2

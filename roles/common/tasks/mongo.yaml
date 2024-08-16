@@ -9,23 +9,23 @@
     state: present
 
 - name: get the categories count
-  ansible.builtin.command:  mongo --host mongodb.daws76s.online --quiet --eval 'db = db.getSiblingDB("catalogue"); db.products.count()'
+  ansible.builtin.command:  mongo --host mongodb.siddhu.xyz --quiet --eval 'db = db.getSiblingDB("catalogue"); db.products.count()'
   register: product_count
   when: component == "catalogue"
 
 - name: get the users count
-  ansible.builtin.command:  mongo --host mongodb.daws76s.online --quiet --eval 'db = db.getSiblingDB("users"); db.users.count()'
+  ansible.builtin.command:  mongo --host mongodb.siddhu.xyz --quiet --eval 'db = db.getSiblingDB("users"); db.users.count()'
   register: user_count
   when: component== "user"
 
 
 - name: load catalogue data
-  ansible.builtin.command: mongo --host mongodb.daws76s.online < /app/schema/catalogue.js
+  ansible.builtin.command: mongo --host mongodb.siddhu.xyz < /app/schema/catalogue.js
   when: component == "catalogue" and products_count.stdout == "0"
  
 
 - name: load user data
-  ansible.builtin.command: mongo --host mongodb.daws76s.online < /app/schema/user.js
+  ansible.builtin.command: mongo --host mongodb.siddhu.xyz < /app/schema/user.js
   when: component == "user" and user_count.stdout == "0"
   
 

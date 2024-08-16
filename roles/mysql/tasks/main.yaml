@@ -2,7 +2,7 @@
   ansible.builtin.command: dnf module disable mysql -y
 
 - name: setup mysql5.7 repo
-  ansible.builtin.copy:
+  ansible.builtin.template:
     src: "{{sql}}"
     dest: /etc/yum.repos.d/mysql.repo
 
